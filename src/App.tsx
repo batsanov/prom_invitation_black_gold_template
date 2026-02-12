@@ -1,15 +1,19 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Dashboard from './components/Dashboard';
+import SecurityLayer from './components/SecurityLayer';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <SecurityLayer />
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </HashRouter>
+    </>
   );
 }
 

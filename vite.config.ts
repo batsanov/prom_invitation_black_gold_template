@@ -5,6 +5,10 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  base: '/demo/prom-black-gold/',
+  define: {
+    'import.meta.env.VITE_DEV_MODE': '"true"',
+  },
   build: {
     rollupOptions: {
       output: {
