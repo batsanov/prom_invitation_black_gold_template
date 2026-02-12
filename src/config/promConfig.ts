@@ -19,22 +19,22 @@ export const promConfig = {
 
   // ─── Graduate / Celebrant ──────────────────────────────────
   graduate: {
-    name: "Дани Бацанов",
-    classOf: "Випуск 2026",
-    initials: "ДБ",
-    hashtag: "#PromDani2026",
+    name: "Дани Иванов",
+    classOf: "Випуск 2027",
+    initials: "ДИ",
+    hashtag: "#Prom Dani2027",
   },
 
   // ─── Date & Time ───────────────────────────────────────────
   date: {
-    isoDate: "2026-05-30T18:00:00",
-    displayDate: "Събота, 30 Май 2026",
+    isoDate: "2027-05-15T18:00:00",
+    displayDate: "Събота, 15 Май 2027",
     timeOnly: "18:00",
-    year: "2026",
+    year: "2027",
   },
 
   contact: {
-    phone: "+359 896700780",
+    phone: "+359 896123123",
   },
 
   // ─── Hero Section ──────────────────────────────────────────
@@ -50,7 +50,7 @@ export const promConfig = {
   countdown: {
     sectionLabel: "Броим до",
     mainTitle: "Голямoто парти",
-    dateDisplay: "Май 30, 2026 • 18:00",
+    dateDisplay: "Май 15, 2027 • 18:00",
     labels: {
       days: "Дни",
       hours: "Часове",
@@ -109,7 +109,7 @@ export const promConfig = {
       messagePlaceholder: "Споделете вашите пожелания или съобщение...",
       submitButton: "Изпрати",
       submitButtonLoading: "Изпращане...",
-      deadlineText: "Моля, отговорете до 10 май 2026",
+      deadlineText: "Моля, отговорете до 16 март 2026",
       successTitle: "Благодарим Ви!",
       successMessage:
         "Вашият отговор беше получен. Нямаме търпение да празнуваме заедно!",
