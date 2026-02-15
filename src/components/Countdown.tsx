@@ -9,24 +9,23 @@ interface TimeLeft {
   seconds: number;
 }
 
-const Countdown = () => {
+const calculateTimeLeft = (): TimeLeft => {
   const weddingDate = new Date(promConfig.date.isoDate);
+  const difference = weddingDate.getTime() - new Date().getTime();
 
-  const calculateTimeLeft = (): TimeLeft => {
-    const difference = weddingDate.getTime() - new Date().getTime();
+  if (difference > 0) {
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  }
 
-    if (difference > 0) {
-      return {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
-    }
+  return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+};
 
-    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-  };
-
+const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
 
   useEffect(() => {
@@ -45,9 +44,10 @@ const Countdown = () => {
   ];
 
   return (
-    <section id="countdown" className="py-20 bg-gradient-to-b from-[#1a1a1a] via-[#121212] to-[#181818] relative overflow-hidden">
-      {/* Subtle overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gold/8 via-transparent to-gold/5" />
+    <section id="countdown" className="py-24 bg-ivory relative overflow-hidden">
+      {/* Soft, luxurious background gradients */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blush/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-dusty-rose/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -55,51 +55,47 @@ const Countdown = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <span className="font-body text-gold/80 font-bold drop-shadow-md tracking-[0.3em] uppercase text-sm">
+          <span className="font-body text-dusty-rose tracking-[0.3em] uppercase text-sm font-semibold">
             {promConfig.countdown.sectionLabel}
           </span>
-          <h2 className="font-display text-4xl md:text-5xl text-white mt-4 drop-shadow-lg">
+          <h2 className="font-display text-5xl md:text-6xl text-deep-rose mt-4 mb-6">
             {promConfig.countdown.mainTitle}
           </h2>
-          <div className="w-24 h-px bg-gold/40 mx-auto mt-6 shadow-sm" />
+          <div className="w-24 h-px bg-fuchsia/30 mx-auto" />
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex justify-center gap-4 md:gap-8"
-        >
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-24">
           {timeBlocks.map((block, index) => (
             <motion.div
               key={block.label}
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col items-center"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="flex flex-col items-center group"
             >
-              <div className="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-lg shadow-xl flex items-center justify-center border border-gold/20 hover:scale-105 transition-transform duration-300">
-                <span className="font-display text-2xl md:text-4xl text-gold/90 drop-shadow-sm">
+              <div className="relative">
+                <span className="font-display text-6xl md:text-8xl text-fuchsia font-normal tabular-nums drop-shadow-sm transition-transform duration-500 group-hover:-translate-y-1">
                   {String(block.value).padStart(2, '0')}
                 </span>
+                {/* Decorative underline on hover */}
+                <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-dusty-rose/0 group-hover:bg-dusty-rose/40 transition-all duration-500 w-0 group-hover:w-full mx-auto" />
               </div>
-              <span className="font-body text-xs md:text-sm text-white/60 mt-2 uppercase tracking-wider drop-shadow-sm">
+              <span className="font-body text-xs md:text-sm text-muted-rose mt-4 uppercase tracking-[0.2em]">
                 {block.label}
               </span>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center font-display italic text-3xl md:text-4xl text-white/80 mt-12 drop-shadow-md"
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-center font-display italic text-2xl md:text-3xl text-dusty-rose/80 mt-16"
         >
           {promConfig.countdown.dateDisplay}
         </motion.p>

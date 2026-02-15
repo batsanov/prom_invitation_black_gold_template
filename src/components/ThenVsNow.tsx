@@ -32,19 +32,19 @@ const ThenVsNow = () => {
   const textY2 = useTransform(scrollYProgress, [0.6, 1], [50, 0]);
 
   return (
-    <div ref={containerRef} className="h-[250vh] relative bg-[#1a1a1a]">
+    <div ref={containerRef} className="h-[250vh] relative bg-ivory">
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col items-center justify-center">
         {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-gold/5 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blush/10 via-transparent to-fuchsia/5 pointer-events-none" />
 
         {/* Header - Always visible */}
         <motion.div
           className="absolute top-24 md:top-32 z-30 text-center"
         >
-          <span className="font-body text-gold/80 font-bold drop-shadow-md tracking-[0.3em] uppercase text-xs md:text-sm">
+          <span className="font-body text-dusty-rose font-bold drop-shadow-sm tracking-[0.3em] uppercase text-xs md:text-sm">
             Пътуване във времето
           </span>
-          <h2 className="font-display text-3xl md:text-5xl text-white mt-2 drop-shadow-lg">
+          <h2 className="font-display text-3xl md:text-5xl text-deep-rose mt-2 drop-shadow-sm">
             Тогава и сега
           </h2>
         </motion.div>
@@ -68,7 +68,7 @@ const ThenVsNow = () => {
               style={{ opacity: textOpacity1, y: textY1 }}
               className="absolute -bottom-16 left-0 right-0 text-center"
             >
-              <span className="font-display text-4xl text-white italic drop-shadow-lg opacity-90">
+              <span className="font-display text-4xl text-deep-rose italic drop-shadow-sm opacity-90">
                 1-ви клас
               </span>
             </motion.div>
@@ -94,7 +94,7 @@ const ThenVsNow = () => {
               style={{ opacity: textOpacity2, y: textY2 }}
               className="absolute -bottom-16 left-0 right-0 text-center"
             >
-              <span className="font-display text-4xl text-gold italic drop-shadow-lg opacity-90">
+              <span className="font-display text-4xl text-fuchsia italic drop-shadow-sm opacity-90">
                 12-ти клас
               </span>
             </motion.div>

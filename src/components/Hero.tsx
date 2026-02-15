@@ -21,8 +21,8 @@ const Hero = () => {
             className="w-full h-full object-cover"
           />
         </picture>
-        {/* Darker overlay to make white text pop on any background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/60" />
+        {/* Rose-tinted overlay for luxurious pink theme */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-deep-rose/80" />
       </div>
 
       {/* Content */}
@@ -31,9 +31,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="mb-12  "
+          className="mb-12"
         >
-          <span className="font-body text-frangipani font-bold tracking-[0.3em] uppercase text-xl md:text-xl lg:text-2xl drop-shadow-md">
+          <span className="font-body text-blush font-bold tracking-[0.3em] uppercase text-xl md:text-xl lg:text-2xl drop-shadow-md">
             {promConfig.hero.subtitle}
           </span>
         </motion.div>
@@ -45,7 +45,7 @@ const Hero = () => {
           className="font-display text-5xl md:text-7xl lg:text-8xl text-white mb-4 drop-shadow-lg"
         >
           <span className="block italic">{promConfig.graduate.name}</span>
-          <span className="block text-2xl md:text-3xl mt-4 text-gold-light font-light tracking-normal  uppercase">{promConfig.graduate.classOf}</span>
+          <span className="block text-2xl md:text-3xl mt-4 text-blush/90 font-light tracking-normal uppercase">{promConfig.graduate.classOf}</span>
         </motion.h1>
       </div>
 
@@ -56,8 +56,8 @@ const Hero = () => {
         transition={{ duration: 1, delay: 0.6 }}
         className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10 text-center w-full"
       >
-        <div className="w-24 h-px bg-gold-light mx-auto mb-6 opacity-80" />
-        <p className="font-display text-xl md:text-2xl text-white tracking-wide drop-shadow-md">
+        <div className="w-24 h-px bg-blush/80 mx-auto mb-6 shadow-sm" />
+        <p className="font-display text-xl md:text-2xl text-soft-white tracking-wide drop-shadow-md">
           {promConfig.date.displayDate}
         </p>
       </motion.div>
@@ -73,7 +73,7 @@ const Hero = () => {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
         >
-          <a href="#countdown" className="text-gold">
+          <a href="#countdown" className="text-blush hover:text-white transition-colors duration-300">
             <ChevronDown size={32} />
           </a>
         </motion.div>
