@@ -4,15 +4,14 @@
 @import "tailwindcss";
 
 @theme {
-  /* Color palette - Elegant event theme */
-  --color-beige: #F5F5DC;
-  --color-champagne: #F7E7CE;
-  --color-frangipani: #FEF9E7;
-  --color-frangipani-dark: #FDEBD0;
-  --color-gold: #D4AF37;
-  --color-gold-light: #E8C872;
-  --color-charcoal: #2C2C2C;
-  --color-charcoal-light: #4A4A4A;
+  /* Pink Luxurious Palette */
+  --color-ivory: #FFFFF0;
+  --color-blush: #FEC5E5;
+  --color-dusty-rose: #C08081;
+  --color-fuchsia: #C71585;
+  --color-deep-rose: #8B4C5E;
+  --color-muted-rose: #A66D7C;
+  --color-soft-white: #FAFAFA;
 
   /* Fonts */
   --font-display: 'Playfair Display', Georgia, serif;
@@ -27,8 +26,8 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  color: var(--color-charcoal);
-  background-color: var(--color-beige);
+  color: var(--color-deep-rose);
+  background-color: var(--color-ivory);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,13 +35,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  color: var(--color-gold);
+  color: var(--color-fuchsia);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--color-gold-light);
+  color: var(--color-dusty-rose);
 }
 
 /* Custom scrollbar */
@@ -51,20 +50,20 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-beige);
+  background: var(--color-ivory);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-gold);
+  background: var(--color-fuchsia);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gold-light);
+  background: var(--color-dusty-rose);
 }
 
 /* Selection color */
 ::selection {
-  background-color: var(--color-frangipani-dark);
-  color: var(--color-charcoal);
+  background-color: var(--color-blush);
+  color: var(--color-deep-rose);
 }

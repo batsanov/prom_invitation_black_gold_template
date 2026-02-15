@@ -22,8 +22,8 @@ const Navbar = () => {
         transition={{ duration: 0.6 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-lg py-3 border-b border-gold/10'
-            : 'bg-gradient-to-b from-black/30 to-transparent backdrop-blur-sm py-6'
+            ? 'bg-ivory/90 backdrop-blur-md shadow-sm py-3 border-b border-fuchsia/10'
+            : 'bg-gradient-to-b from-black/30 to-transparent backdrop-blur-[2px] py-6'
         }`}
       >
         <div className="container mx-auto px-4">
@@ -31,8 +31,8 @@ const Navbar = () => {
             {/* Logo */}
             <a
               href="#home"
-              className={`font-display text-2xl transition-colors duration-300 drop-shadow-md ${
-                isScrolled ? 'text-charcoal' : 'text-white'
+              className={`font-display text-2xl transition-colors duration-300 drop-shadow-sm hover:text-fuchsia ${
+                isScrolled ? 'text-deep-rose' : 'text-white'
               }`}
             >
               {promConfig.graduate.initials}

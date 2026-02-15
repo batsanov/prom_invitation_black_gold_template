@@ -110,7 +110,7 @@ function Home() {
   };
 
   return (
-    <div className={`min-h-screen bg-beige ${!isEnvelopeOpen ? 'overflow-hidden max-h-screen' : ''}`}>
+    <div className={`min-h-screen bg-ivory ${!isEnvelopeOpen ? 'overflow-hidden max-h-screen' : ''}`}>
       {/* Background Music - preload none to save initial bandwidth */}
       <audio
         ref={audioRef}
@@ -124,7 +124,7 @@ function Home() {
       {isEnvelopeOpen && (
         <button
           onClick={toggleMusic}
-          className="fixed bottom-6 right-6 z-50 bg-white/90 hover:bg-white text-charcoal p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+          className="fixed bottom-6 right-6 z-50 bg-ivory/90 hover:bg-white text-deep-rose border border-fuchsia/20 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
           aria-label={isMusicPlaying ? 'Mute music' : 'Play music'}
         >
           {isMusicPlaying ? <Volume2 size={24} /> : <VolumeX size={24} />}

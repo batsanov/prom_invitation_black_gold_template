@@ -3,9 +3,9 @@ import { promConfig } from '../config/promConfig';
 
 const Location = () => {
   return (
-    <section id="location" className="py-20 bg-gradient-to-b from-[#181818] via-[#101010] to-[#141414] relative overflow-hidden">
+    <section id="location" className="py-24 bg-ivory relative overflow-hidden">
       {/* Decorative gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-gold/10 via-transparent to-gold/6" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--color-blush)_0%,_transparent_50%)] opacity-30" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -15,13 +15,13 @@ const Location = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="font-body text-gold/80 tracking-[0.3em] uppercase text-sm drop-shadow-md">
+          <span className="font-body text-dusty-rose tracking-[0.3em] uppercase text-sm font-bold">
             {promConfig.location.title}
           </span>
-          <h2 className="font-display text-4xl md:text-5xl text-white mt-4 drop-shadow-lg">
+          <h2 className="font-display text-4xl md:text-5xl text-deep-rose mt-4 drop-shadow-sm">
             {promConfig.location.city}
           </h2>
-          <div className="w-24 h-px bg-gold/40 mx-auto mt-6 shadow-sm" />
+          <div className="w-24 h-px bg-fuchsia/30 mx-auto mt-6" />
         </motion.div>
 
         <motion.div
@@ -29,7 +29,7 @@ const Location = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gold/15"
+          className="max-w-5xl mx-auto relative rounded-2xl overflow-hidden shadow-2xl border border-dusty-rose/20"
         >
           <div className="relative">
             <div className="h-[450px] md:h-[500px]">
@@ -39,7 +39,7 @@ const Location = () => {
                 className="w-full h-full object-cover"
               />
               {/* Image overlay for consistency with Hero */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-deep-rose/40 via-transparent to-deep-rose/10 mix-blend-multiply" />
             </div>
           </div>
         </motion.div>
